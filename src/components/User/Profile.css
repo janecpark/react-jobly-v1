@@ -1,0 +1,17 @@
+.Profile{
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.signUpForm, .logForm{
+    width: 500px;
+    margin: 0 auto;
+    padding: 1.5em;
+    border-radius: 5%;
+}
+
+form{
+    border: 2px solid #121629;
+    padding: 1em;
+}

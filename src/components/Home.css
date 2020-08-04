@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import '~bootstrap/dist/css/bootstrap.css';
+
+
+.Header, .welcome{
+    text-align: center
+}
+
+.alert{
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.Home-img{
+    width: 400px;
+}
+
+
+.Home{
+    text-align:center;
+}
+
+.nav-custom{
+    font-family: 'Staatliches', cursive;
+    font-size: 1.2em;
+}
+
+
+ul.navbar-nav a:hover { 
+    text-decoration: none !important;
+}
+

@@ -1,0 +1,53 @@
+.Company{
+    width:800px;
+    display: grid;
+    margin: 20px auto;
+    
+}
+
+.Company-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Staatliches', cursive;
+
+}
+
+.Companies{
+    display:grid;
+    place-items: center;
+}
+
+.form{
+    width:800px;
+
+}
+
+.btn{
+    margin-top: 10px
+}
+
+a.Company:hover{
+    text-decoration: none;
+}
+
+
+.card img{
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+
+.CompanyInfo{
+    text-align: center;
+}
+
+div .Company{
+    border: 2px solid #121629;
+    background-color: #232946;
+    color:white;
+    transition: transform .2s ease;
+}
+
+div .Company:hover{
+    transform: scale(1.05);
+}

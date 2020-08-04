@@ -1,0 +1,36 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.Card{
+    width:800px;
+    display: grid;
+    margin: 20px auto;
+    padding: 0;
+    background-color: #232946;
+    border: 2px solid #121629;
+}
+
+.Job-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Staatliches', cursive;
+}
+
+.Jobs{
+    display: grid;
+    place-items: center;
+}
+
+.btn, .btn:hover{
+    background-color: transparent;
+    border:2px solid #7f5af0;
+    color: #7f5af0;
+    outline:none;
+}
+
+.remove, .remove:hover{
+    border: 2px solid #b8c1ec;
+    color: #b8c1ec;
+    outline:none;
+    background-color: transparent;
+}
+
