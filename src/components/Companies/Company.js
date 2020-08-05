@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Company = ({name, desc, handle}) =>{
     
     return(
-        <Link className="Company card" to={`/company/${handle}`}>
+        <Link className="Company card" to={`/company/${handle}`} key={handle}>
             <div className="card-body">
             <h6 className="card-title d-flex justify-content-between">
             <span className="Company-title">{name}</span>

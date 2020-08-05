@@ -2,6 +2,8 @@ import React, {useState, useContext} from 'react'
 import JoblyApi from '../../JoblyApi'
 import UserContext from './UserContext'
 import './Profile.css'
+import Alert from '../Alert'
+
 
 /**Form to allows users to change their information  */
 
@@ -46,6 +48,8 @@ const Profile = () =>{
             }))
             setCurUser(res)
         }catch(errors){
+            console.log(errors);
+            
             setFormData(f=>({...f, errors}))
         }
     }
@@ -103,9 +107,12 @@ const Profile = () =>{
                 onChange={handleChange}
                 />
                 </div>
-                {formData.errors.length ? formData.errors : null}
+                {formData.errors.length ? 
+                <Alert type="danger" messages={formData.errors} /> :null}
                 <br/>
-                {formData.saveForm ? <p>form saved</p> : null}
+                {formData.saveForm ? 
+                <Alert type="success" messages={["User Updated"]} />
+                : null}
                 <button className="btn btn-primary btn-block">Save Changes</button>
                 </form>
                 </div>

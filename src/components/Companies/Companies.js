@@ -11,16 +11,17 @@ import Pagination from '../Pagination'
 const Companies = () =>{
     const [formData, setFormData] = useState()
     const [companies, setCompanies] = useState([])
-    const [comp, setComp] = useState(null)
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(20)
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentComp = companies.slice(indexOfFirstPost, indexOfLastPost);
+    const [loading, setLoading] = useState(false)
 
     useEffect(() =>{
         async function getCompanies() {
           const result = await JoblyApi.getCompanies()
+          setLoading(true)
           setCompanies(result)      
         }
         getCompanies()
@@ -35,9 +36,12 @@ const Companies = () =>{
         search(formData)
     }
 
+
     async function search(term){
         const result = await JoblyApi.searchCompany(term)
-        setComp([...result])
+       
+        setCompanies(result)
+        
     }
     
     const compList = currentComp.map(c =>(
@@ -48,6 +52,9 @@ const Companies = () =>{
                 handle={c.handle}
                 /> 
     ))
+       
+        
+    if(!loading) return <p style={{textAlign: 'center'}}>Loading...</p>
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
     
@@ -65,13 +72,14 @@ const Companies = () =>{
             <button className="btn btn-outline-secondary">Submit</button>
             </form>
       
-            {comp ? comp.map(c=>(
-                <>
-                <Link to={`/company/${c.handle}`}>
-                <Company name={c.name} desc={c.description}/> </Link></>))
-             : <>{compList}</>
+        
+            {!compList.length ?<p> No results</p> :
+            <>
+            {compList}
+            <Pagination postsPerPage={postsPerPage} totalPosts={companies.length} paginate={paginate}/></>
             }
-            <Pagination postsPerPage={postsPerPage} totalPosts={companies.length} paginate={paginate}/>
+        
+            
         </div>
     )
     

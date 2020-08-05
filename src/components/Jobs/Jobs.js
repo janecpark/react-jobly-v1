@@ -77,8 +77,11 @@ const Jobs = () =>{
                 />
                 <button className="btn btn-outline-secondary">Submit</button>
             </form>
-            {jobList}
+            {!jobList.length ? <p> No results </p>:
+            <>{jobList}
             <Pagination postsPerPage={postsPerPage} totalPosts={jobs.length} paginate={paginate}/>
+            </>
+            }
         </div>
     )
 }
