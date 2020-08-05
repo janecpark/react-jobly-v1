@@ -21,16 +21,23 @@
 }
 
 .btn, .btn:hover{
-    background-color: transparent;
-    border:2px solid #7f5af0;
-    color: #7f5af0;
-    outline:none;
+    background-color: transparent !important; 
+    border:2px solid #7f5af0 !important;
+    color: #7f5af0 !important;
+    outline:none !important;
+    box-shadow:none !important;
+
 }
 
 .remove, .remove:hover{
-    border: 2px solid #b8c1ec;
-    color: #b8c1ec;
-    outline:none;
-    background-color: transparent;
+    border: 2px solid #b8c1ec !important;
+    color: #b8c1ec !important;
+    outline:none !important;
+    background-color: transparent !important;
+    box-shadow:none !important;
 }
 
+
+.btn:active, .btn:active:focus{
+    box-shadow:none;
+}
