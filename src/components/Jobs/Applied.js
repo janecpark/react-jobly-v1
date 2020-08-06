@@ -6,7 +6,6 @@ import JobContext from '../JobContext'
 
 /** Shows a list of jobs that have been applied by the user */
 
-
 const Applied = () =>{
     const [userJobs, setUserJobs] = useState([])
     const {jobs, setJobs} = useContext(JobContext)
@@ -14,24 +13,17 @@ const Applied = () =>{
 
     useEffect(() =>{
         async function fetchJob(){
-        try{
-
             let user = await curUser.username
             let res = await JoblyApi.getUser(user)
-
             let appliedJobId = res.jobs.map(job=>job.id)
-            
             let applied = jobs.filter(function(job){
               return appliedJobId.includes(job.id)
             })
+            
             setUserJobs(applied)
-        
-        }catch(err){
-            console.log(err);
-        }
 
     }fetchJob()
-    },[])
+    },[curUser, jobs])
     
     const jobsList = userJobs.map((j,idx)=>(
         <Job key={j.id} 

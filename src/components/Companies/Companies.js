@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Company from './Company'
-import {Link} from 'react-router-dom'
 import JoblyApi from '../../JoblyApi'
 import './Company.css'
 import Pagination from '../Pagination'
@@ -22,7 +21,7 @@ const Companies = () =>{
         async function getCompanies() {
           const result = await JoblyApi.getCompanies()
           setLoading(true)
-          setCompanies(result)      
+          setCompanies(result)   
         }
         getCompanies()
       },[]);
@@ -39,9 +38,7 @@ const Companies = () =>{
 
     async function search(term){
         const result = await JoblyApi.searchCompany(term)
-       
         setCompanies(result)
-        
     }
     
     const compList = currentComp.map(c =>(

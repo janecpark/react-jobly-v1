@@ -15,7 +15,6 @@ const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
     email:"",
-    // photo_url:"",
     errors:[]
 })
     const handleChange = (e) =>{
@@ -106,16 +105,6 @@ const [formData, setFormData] = useState({
                    />
                    </div>  
 
-            {/* <div className="form-group">
-            <label htmlFor="photo_url">Photo URL</label>
-            <input type="text" 
-                   className="form-control"
-                   id="photo_url"
-                   name="photo_url" 
-                   onChange={handleChange}
-                   value={formData.photo_url}
-                   />
-                   </div>   */}
             <button className="btn btn-primary btn-block">Sign Up</button>
         </form>
     )

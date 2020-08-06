@@ -30,7 +30,7 @@ const Routes = ({setToken, loading}) =>{
       }   
     }
     fetchData()
-  },[curUser]);
+  },[curUser, loading]);
 
     return(
      <div className="App">
